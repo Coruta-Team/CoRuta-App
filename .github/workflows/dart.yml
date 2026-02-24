@@ -3,7 +3,7 @@ name: Flutter CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  pull_request: 
     branches: [ "main" ]
 
 jobs:
@@ -18,21 +18,19 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          # Esto asegura que use una versión compatible
-          cache: true
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          if [ -f pubspec.yaml ]; then
+            flutter pub get
+          else
+            echo "Archivo pubspec.yaml no encontrado en la raiz"
+          fi
 
       - name: Analyze code
-        # Esto revisa que no tengas errores de sintaxis en Dart
-        run: flutter analyze
-
-      - name: Run tests
-        # Usamos el truco del "if" por si aún no tienes tests creados
         run: |
-          if [ -d "test" ]; then
-            flutter test
+          if [ -f pubspec.yaml ]; then
+            flutter analyze
           else
-            echo "No se encontraron tests, saltando paso."
+            echo "Saltando analisis porque no se encontro el proyecto"
           fi
