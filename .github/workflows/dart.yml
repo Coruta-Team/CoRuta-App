@@ -1,0 +1,38 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          # Esto asegura que use una versión compatible
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze code
+        # Esto revisa que no tengas errores de sintaxis en Dart
+        run: flutter analyze
+
+      - name: Run tests
+        # Usamos el truco del "if" por si aún no tienes tests creados
+        run: |
+          if [ -d "test" ]; then
+            flutter test
+          else
+            echo "No se encontraron tests, saltando paso."
+          fi
