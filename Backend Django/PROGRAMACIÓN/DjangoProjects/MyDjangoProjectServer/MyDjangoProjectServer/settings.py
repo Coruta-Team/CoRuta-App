@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-akt@8-vf3bmm3&g*n8n9sm3yj!f9z0g+t=po@zep1$5-r^f8zl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.72']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -74,8 +76,12 @@ WSGI_APPLICATION = 'MyDjangoProjectServer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'opticdev_db',
+        'USER': 'root',
+        'PASSWORD': 'Password',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
