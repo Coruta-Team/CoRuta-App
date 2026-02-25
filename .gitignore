@@ -26,6 +26,12 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+build/
+.dart_tool/
+.packpages
+.flutter-pluggins
+.flutter-plugins-dependencies
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
