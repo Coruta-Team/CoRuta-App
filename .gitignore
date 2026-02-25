@@ -212,5 +212,59 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Li
-# Limpieza final
+# Flutter & Dart
+build/
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+pubspec.lock
+*.swp
+
+# Android
+.gradle/
+.idea/
+local.properties
+*.jks
+*.keystore
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# iOS
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Windows
+windows/flutter/flutter_windows.dll
+
+# Linux
+linux/flutter/
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Pods/
+
+# Web
+web/index.html.bak
+
+# Compiled files
+*.o
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+
+# IDE
+.vscode/
+*.iml
+*.iws
+*.ipr
+.idea/
