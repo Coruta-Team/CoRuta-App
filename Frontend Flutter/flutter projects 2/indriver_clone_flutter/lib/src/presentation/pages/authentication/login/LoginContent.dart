@@ -26,7 +26,7 @@ class LoginContent extends StatelessWidget {
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  Color.fromARGB(255, 12, 38, 145),
+                  Color.fromARGB(34, 40, 49, 1000),
                   Color.fromARGB(255, 34, 156, 249),
                 ],
               ),
